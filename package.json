@@ -1,0 +1,21 @@
+{
+  "name": "@vxna/glsl-loader",
+  "version": "1.0.2",
+  "description": "Bundle your shaders without whitespace & comments",
+  "author": "@vxna",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vxna/glsl-loader.git"
+  },
+  "engines": {
+    "node": ">= 6.9.0 || >= 8.9.0"
+  },
+  "dependencies": {
+    "glsl-tokenizer": "^2.1.2"
+  },
+  "peerDependencies": {
+    "webpack": "^3.0.0 || ^4.0.0-beta.1 || ^4.0.0"
+  }
+}
