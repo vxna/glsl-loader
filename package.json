@@ -1,6 +1,6 @@
 {
   "name": "@vxna/glsl-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Bundle your shaders without whitespace & comments",
   "author": "@vxna",
   "license": "MIT",

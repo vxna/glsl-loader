@@ -54,10 +54,12 @@ function trimWhitespace(tokens) {
 }
 
 module.exports = function(source) {
-  this.cacheable && this.cacheable()
+  const callback = this.async()
+
+  this.cacheable()
 
   const tokens = tokenize(source)
   const result = trimWhitespace(tokens)
 
-  return `module.exports = ${JSON.stringify(result)}`
+  callback(null, `module.exports = ${JSON.stringify(result)}`)
 }
