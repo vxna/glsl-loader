@@ -15,51 +15,13 @@ function stripComments(tokens) {
   return output.join('')
 }
 
-function trimWhitespace(tokens) {
-  for (let i = 0; i < tokens.length; i++) {
-    if (tokens[i].type !== 'whitespace') continue
-    if (
-      (tokens[i + 1] && tokens[i + 1].type === 'preprocessor') ||
-      (tokens[i - 1] && tokens[i - 1].type === 'preprocessor')
-    ) {
-      tokens[i].data = tokens[i].data.replace(/\s+/g, '\n')
-    } else {
-      tokens[i].data = tokens[i].data.replace(/\s+/g, ' ')
-
-      switch (tokens[i + 1] && tokens[i + 1].data) {
-        case '(':
-        case ';':
-        case ')':
-        case '{':
-        case '=':
-        case '}':
-        case ',':
-          tokens[i].data = tokens[i].data.replace(/\s+/g, '')
-      }
-
-      switch (tokens[i - 1] && tokens[i - 1].data) {
-        case '(':
-        case ';':
-        case ')':
-        case '{':
-        case '=':
-        case '}':
-        case ',':
-          tokens[i].data = tokens[i].data.replace(/\s+/g, '')
-      }
-    }
-  }
-
-  return stripComments(tokens)
-}
-
 module.exports = function(source) {
   const callback = this.async()
 
   this.cacheable()
 
   const tokens = tokenize(source)
-  const result = trimWhitespace(tokens)
+  const result = stripComments(tokens)
 
   callback(null, `module.exports = ${JSON.stringify(result)}`)
 }

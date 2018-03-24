@@ -1,5 +1,5 @@
 # @vxna/glsl-loader
-Bundle your shaders without whitespace & comments
+Bundle your shaders without comments
 
 ## Usage
 
