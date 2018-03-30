@@ -1,6 +1,6 @@
 {
   "name": "@vxna/glsl-loader",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Bundle your shaders without comments",
   "author": "@vxna",
   "license": "MIT",
@@ -9,7 +9,10 @@
     "type": "git",
     "url": "https://github.com/vxna/glsl-loader.git"
   },
-  "keywords": ["webpack", "glsl"],
+  "keywords": [
+    "webpack",
+    "glsl"
+  ],
   "engines": {
     "node": ">= 6.9.0"
   },
